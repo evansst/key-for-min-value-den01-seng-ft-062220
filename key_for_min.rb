@@ -5,9 +5,14 @@ def key_for_min_value(name_hash)
   if name_hash.empty?
     return nil
   end
-  min = name_hash[0]
-  
-  key_for_min_value.each do |key, value|
-    
+  min = 10000000000000
+  minkey = {}
+  name_hash.each do |key, value|
+    if value < min
+      min = value
+      minkey = key
+    end
+  end
+  minkey
 
 end
